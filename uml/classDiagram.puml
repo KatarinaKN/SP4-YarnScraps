@@ -1,0 +1,94 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+package Util {
+class TextUI {
++ String displayMsg()
++ String promptTxt()
++ int promptNum()
++ boolean promptYesOrNo()
+}
+}
+
+class Main
+class Start {
++ startSession()
++ endSession()
+}
+
+class User {
+- name
++ String getName()
++ String setName()
+
+}
+
+class Recipe {
++ showRecipe()
+
+}
+
+enum YarnType {
+COTTON
+WOOL
+}
+
+enum Level {
+BEGINNER
+INTERMEDIATE
+ADVANCED
+}
+
+enum Gauge {
+}
+
+enum NeedleSize {
+2.0 MM
+2.5 MM
+3.0 MM
+3.5 MM
+4.0 MM
+4.5 MM
+5.0 MM
+5.5 MM
+6.0 MM
+6.5 MM
+7.0 MM
+7.5 MM
+8.0 MM
+8.5 MM
+9.0 MM
+9.5 MM
+}
+
+enum YarnAmount {
+25 GRAMS
+50 GRAMS
+75 GRAMS
+100 GRAMS
+125 GRAMS
+150 GRAMS
+175 GRAMS
+200 GRAMS
+}
+
+enum ExtraMaterials {
+EMBROIDERY THREAD
+WADDING
+}
+
+Main *-- Start
+Start *-- TextUI
+Start *-- User
+User - Recipe
+
+Start *- Recipe
+Recipe *-- YarnType
+Recipe *-- Level
+Recipe *-- Gauge
+Recipe *-- NeedleSize
+Recipe *-- YarnAmount
+Recipe *-- ExtraMaterials
+
+
+@enduml
