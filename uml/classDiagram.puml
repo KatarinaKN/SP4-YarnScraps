@@ -11,13 +11,13 @@ class StartMenu {
 + int chooseNeedleSize()
 + int chooseYarnType()
 + int chooseGauge()
-+ ArrayList<Recipe> showRecipes()
++ ArrayList<Pattern> showPatterns()
 + boolean tryAgain()
-+ Recipe getRandomRecipe()
++ Pattern getRandomPattern()
 + void endSession()
 }
 
-class Recipe {
+class Pattern {
 - String name
 - double needleSize
 - int yarnAmount
@@ -25,21 +25,20 @@ class Recipe {
 - String yarnType
 - String category
 - int gauge
-- filepath Recipe
-- ArrayList<Recipe> beginnerCrochet
-- ArrayList<Recipe> intermediateCrochet
-- ArrayList<Recipe> advancedCrochet
-- ArrayList<Recipe> beginnerKnit
-- ArrayList<Recipe> intermediateKnit
-- ArrayList<Recipe> advancedKnit
+- ArrayList<Pattern> beginnerCrochet
+- ArrayList<Pattern> intermediateCrochet
+- ArrayList<Pattern> advancedCrochet
+- ArrayList<Pattern> beginnerKnit
+- ArrayList<Pattern> intermediateKnit
+- ArrayList<Pattern> advancedKnit
 + String toString()
-+ ArrayList<Recipe> showRecipesCrochetBeginner()
-+ ArrayList<Recipe> showRecipesCrochetIntermediate()
-+ ArrayList<Recipe> showRecipesCrochetAdvanced()
-+ ArrayList<Recipe> showRecipesKnitBeginner()
-+ ArrayList<Recipe> showRecipesKnitIntermediate()
-+ ArrayList<Recipe> showRecipesKnitAdvanced()
-+ ArrayList<Recipe> searchRecipes()
++ ArrayList<Pattern> showPatternsCrochetBeginner()
++ ArrayList<Pattern> showPatternsCrochetIntermediate()
++ ArrayList<Pattern> showPatternsCrochetAdvanced()
++ ArrayList<Pattern> showPatternsKnitBeginner()
++ ArrayList<Pattern> showPatternsKnitIntermediate()
++ ArrayList<Pattern> showPatternsKnitAdvanced()
++ ArrayList<Pattern> searchPatterns()
 + String getName()
 + double getNeedleSize()
 + int getYarnAmount()
@@ -52,8 +51,8 @@ class Recipe {
 
 package test {
 class Test {
-+ boolean enoughYarnForRecipe()
-+ ArrayList<Recipe> getRecipesByDifficulty()
++ boolean enoughYarnForPattern()
++ ArrayList<Recipe> getPatternsByDifficulty()
 + String testToStringOutput()
 }
 }
@@ -80,15 +79,15 @@ class YarnGUI {
 }
 
 Main *-- StartMenu
-StartMenu *-- User
-User o-- Recipe
-StartMenu *-- Recipe
-Recipe *-- Level
-Recipe *-- NeedleSize
-Recipe *-- YarnAmount
-Recipe *-- YarnType
-Recipe *-- ExtraMaterials
-Recipe *-- Gauge
+StartMenu -- User
+User -- Pattern
+StartMenu *-- Pattern
+Pattern *-- Level
+Pattern *-- NeedleSize
+Pattern *-- YarnAmount
+Pattern *-- YarnType
+Pattern *-- ExtraMaterials
+Pattern *-- Gauge
 StartMenu *- TextUI
 
 enum Level {
